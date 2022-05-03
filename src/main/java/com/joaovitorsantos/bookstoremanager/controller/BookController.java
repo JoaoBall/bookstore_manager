@@ -1,9 +1,8 @@
 package com.joaovitorsantos.bookstoremanager.controller;
 
 
+import com.joaovitorsantos.bookstoremanager.dto.BookDTO;
 import com.joaovitorsantos.bookstoremanager.dto.MessageResponseDTO;
-import com.joaovitorsantos.bookstoremanager.entity.Book;
-import com.joaovitorsantos.bookstoremanager.repository.BookRepository;
 import com.joaovitorsantos.bookstoremanager.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1/books")
 public class BookController {
 
-    private BookService bookService;
+    private final BookService bookService;
 
     @Autowired
     public BookController(BookService bookService) {
@@ -23,8 +22,8 @@ public class BookController {
     }
 
     @PostMapping
-    public MessageResponseDTO create(@RequestBody Book book) {
-        return bookService.create(book);
+    public MessageResponseDTO create(@RequestBody BookDTO bookDTO) {
+        return bookService.create(bookDTO);
 
     }
 }

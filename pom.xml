@@ -11,7 +11,7 @@
 	<groupId>com.joaovitorsantos</groupId>
 	<artifactId>bookstoremanager</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>bookstoremanager</name>
+	<name>bookstore-manager</name>
 	<description>Bookstore Manager Project</description>
 	<properties>
 		<java.version>18</java.version>
@@ -29,7 +29,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -40,7 +39,6 @@
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<version>2.1.212</version>
-			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -52,6 +50,51 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.github.piacenti</groupId>
+			<artifactId>dsl-maker</artifactId>
+			<version>1.1.46</version>
+		</dependency>
+		<dependency>
+			<groupId>com.lambdaisland</groupId>
+			<artifactId>faker</artifactId>
+			<version>0.2.8</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
+		<dependency>
+			<groupId>com.github.javafaker</groupId>
+			<artifactId>javafaker</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.joaovitorsantos</groupId>
+			<artifactId>bookstoremanager</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct-processor</artifactId>
+			<version>1.4.2.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.komapper</groupId>
+			<artifactId>komapper-sqlcommenter</artifactId>
+			<version>0.31.0</version>
+		</dependency>
+		<dependency>
+			<groupId>cc.siyecao.mapper</groupId>
+			<artifactId>mybatis-mapper</artifactId>
+			<version>2.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct</artifactId>
+			<version>1.4.2.Final</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -62,13 +105,33 @@
 				<configuration>
 					<excludes>
 						<exclude>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
+							<groupid>org.apache.maven.plugins</groupid>
+							<artifactid>maven-compiler-plugin</artifactid>
+							<surce>${java.version}</surce>
+							<target>${java.version}</target>
+							<annotetionProcessorPaths>
+								<path>
+									<groupId>org.project-lombok</groupId>
+									<artifactId>lombok</artifactId>
+								</path>
+								<path>
+									<groupid>org.mapstruct</groupid>
+									<artifacid>mapstruct-processor</artifacid>
+									<version>1.4.2.Final</version>
+								</path>
+							</annotetionProcessorPaths>
 						</exclude>
 					</excludes>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
+	<repositories>
+		<repository>
+			<id>clojars</id>
+			<name>Clojars</name>
+			<url>https://repo.clojars.org/</url>
+		</repository>
+	</repositories>
 
 </project>
