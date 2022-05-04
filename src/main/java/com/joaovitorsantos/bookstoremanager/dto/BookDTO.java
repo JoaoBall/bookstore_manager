@@ -29,10 +29,11 @@ public class BookDTO {
     @NotNull
     private Integer chapters;
 
+    @NotNull
     @NotBlank
     @Size(max = 100)
     @Pattern(regexp ="(?:ISBN(?:-10)?:?)?(?=[0-9X]{10}$|(?=(?:[0-9]=[- ]){3})[-●0-9X]{13}$)[0-9]{1,5}[-●]?[0-9]+[-●]?[0-9]+[-●]?[0-9X]$",
-            message = "Formato do ISBN tem que ser um valido.")
+            message = "Formato do ISBN tem que ser um valido")
     private String isbn;
 
     @NotBlank

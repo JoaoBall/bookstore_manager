@@ -21,7 +21,7 @@ public class BookUtils {
                 .name(faker.book().author())
                 .pages(faker.number().numberBetween(0, 200))
                 .chapters(faker.number().numberBetween(1, 200))
-                .isbn(String.valueOf("0596520689"))
+                .isbn(String.valueOf(Integer.valueOf("0596520689")))
                 .publisherName(faker.book().publisher())
                 .author(createFakerAuthorDTO1())
                 .build();
@@ -32,7 +32,7 @@ public class BookUtils {
                 .name(faker.book().author())
                 .pages(faker.number().numberBetween(0, 200))
                 .chapters(faker.number().numberBetween(1, 200))
-                .isbn(Integer.valueOf("0-596-52068-9"))
+                .isbn(Integer.valueOf("0596520689"))
                 .publisherName(faker.book().publisher())
                 .author(creatFakerAuthor())
                 .build();

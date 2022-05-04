@@ -61,7 +61,7 @@ public class BookControllerTest {
     @Test
     void tesWhenPOSTwithInvalidISBNisCalledThenABadRequestShouldBeCreated() throws Exception {
         BookDTO bookDTO = createFakerBookDTO();
-        bookDTO.setIsbn("invalid isbn");
+        bookDTO.setIsbn(String.valueOf("invalid isbn"));
 
         mockMvc.perform(MockMvcRequestBuilders.post(BOOK_API_URL_PATH)
                         .contentType(MediaType.APPLICATION_JSON)
